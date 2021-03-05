@@ -7,6 +7,7 @@
  */
 
 import React from 'react';
+import FriendList from './FriendList';
 import {
   SafeAreaView,
   StyleSheet,
@@ -51,7 +52,7 @@ class MyReceiptsScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>My Receipts Screen</Text>
+        <Text>QR Code Screen</Text>
       </View>
     )
   }
@@ -98,8 +99,8 @@ const TabNavigator = createMaterialBottomTabNavigator(
       }
     },
  
-    Reciepts: {
-      screen: MyReceiptsScreen,
+    Search: {
+      screen: FriendList,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <View>
@@ -112,7 +113,7 @@ const TabNavigator = createMaterialBottomTabNavigator(
       }
     },
     Scan: {
-      screen: ScanReciept,
+      screen: MyReceiptsScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <View>
@@ -121,10 +122,10 @@ const TabNavigator = createMaterialBottomTabNavigator(
         ),
         activeColor: '#ffffff',
         inactiveColor: '#C0C0C0',
-        barStyle: { backgroundColor: '#FF1493'  },
+        barStyle: { backgroundColor: '#FF1493'},
       }
     },
-    Friends: {
+    Activity: {
       screen: FriendsScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
@@ -137,20 +138,7 @@ const TabNavigator = createMaterialBottomTabNavigator(
         barStyle: { backgroundColor: '#FF1493'},
       }
     },
-    Profile: {
-      screen: ProfileScreen,
-      navigationOptions: {
-        tabBarIcon: ({ tintColor }) => (
-          <View>
-            <Icon style={[{color: tintColor}]} size={25} name={'ios-person'} />
-          </View>
-        ),
-        activeColor: '#ffffff',
-        inactiveColor: '#C0C0C0'
-        ,
-        barStyle: { backgroundColor: '#FF1493' },
-      }
-    },
+  
   },
   {
     initialRouteName: 'Home',
