@@ -8,6 +8,7 @@
 
 import React from 'react';
 import FriendList from './FriendList';
+import PageTwo from './PageTwo';
 import {
   SafeAreaView,
   StyleSheet,
@@ -38,35 +39,6 @@ class HomeScreen extends React.Component {
   }
 }
 
-class ScanReciept  extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Scan Reciept</Text>
-      </View>
-    )
-  }
-}
-
-class MyReceiptsScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>QR Code Screen</Text>
-      </View>
-    )
-  }
-}
-
-class ProfileScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Profile Screen</Text>
-      </View>
-    )
-  }
-}
 
 
 class FriendsScreen extends React.Component {
@@ -113,7 +85,7 @@ const TabNavigator = createMaterialBottomTabNavigator(
       }
     },
     Scan: {
-      screen: MyReceiptsScreen,
+      screen: PageTwo,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <View>
@@ -125,19 +97,7 @@ const TabNavigator = createMaterialBottomTabNavigator(
         barStyle: { backgroundColor: '#FF1493'},
       }
     },
-    Activity: {
-      screen: FriendsScreen,
-      navigationOptions: {
-        tabBarIcon: ({ tintColor }) => (
-          <View>
-            <Icon style={[{color: tintColor}]} size={25} name={'ios-people'} />
-          </View>
-        ),
-        activeColor: '#ffffff',
-        inactiveColor: '#C0C0C0',
-        barStyle: { backgroundColor: '#FF1493'},
-      }
-    },
+   
   
   },
   {
